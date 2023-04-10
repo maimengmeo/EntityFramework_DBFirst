@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Home" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="btnClearData" Content="Clear Data" HorizontalAlignment="Left" Margin="157,57,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnClearData" Content="Clear Data" HorizontalAlignment="Left" Margin="157,57,0,0" VerticalAlignment="Top" Click="btnClearData_Click"/>
         <Button x:Name="btnAdd" Content="Add New Product" HorizontalAlignment="Left" Margin="78,330,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="177,276,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnGetAllProd" Content="Get All Products" HorizontalAlignment="Left" Margin="33,57,0,0" VerticalAlignment="Top" Click="btnGetAllProd_Click"/>
