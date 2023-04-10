@@ -44,7 +44,7 @@ namespace FinalTuyetMaiPham
 
         private void btnClearData_Click(object sender, RoutedEventArgs e)
         {
-            cmbCategories.SelectedItem = null;
+
             txtProdName.Text = string.Empty;
             grdProd.ItemsSource = null;
 
