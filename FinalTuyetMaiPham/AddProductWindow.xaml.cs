@@ -15,13 +15,15 @@ using System.Windows.Shapes;
 namespace FinalTuyetMaiPham
 {
     /// <summary>
-    /// Interaction logic for AddProd.xaml
+    /// Interaction logic for AddProductWindow.xaml
     /// </summary>
-    public partial class AddProd : Window
+    public partial class AddProductWindow : Window
     {
-        public AddProd()
+        List<Category> categories;
+        public AddProductWindow(List<Category> categories)
         {
             InitializeComponent();
+            this.categories = categories;
         }
     }
 }

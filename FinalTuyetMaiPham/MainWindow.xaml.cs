@@ -20,6 +20,8 @@ namespace FinalTuyetMaiPham
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Category> categories;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace FinalTuyetMaiPham
         {
             using (var context = new NorthwindEntities())
             {
-                var categories = context.Categories.ToList();
+                categories = context.Categories.ToList();
 
                 cmbCategories.ItemsSource = categories;
                 cmbCategories.DisplayMemberPath = "CategoryName";
@@ -73,11 +75,18 @@ namespace FinalTuyetMaiPham
             using (var context = new NorthwindEntities())
             {
                 var products = context.Products
-                                        .Where (p => p.ProductName.Contains(txtProdName.Text))
+                                        .Where(p => p.ProductName.Contains(txtProdName.Text))
                                         .ToList();
 
                 grdProd.ItemsSource = products;
             }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddProductWindow addProductWindow = new AddProductWindow(categories);
+            addProductWindow.Owner = this;
+            addProductWindow.ShowDialog();
         }
     }
 }
