@@ -11,7 +11,7 @@
         <Button x:Name="btnAdd" Content="Add New Product" HorizontalAlignment="Left" Margin="78,330,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="177,276,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnGetAllProd" Content="Get All Products" HorizontalAlignment="Left" Margin="33,57,0,0" VerticalAlignment="Top" Click="btnGetAllProd_Click"/>
-        <ComboBox x:Name="cmbCategories" HorizontalAlignment="Left" Margin="33,161,0,0" VerticalAlignment="Top" Width="183"/>
+        <ComboBox x:Name="cmbCategories" HorizontalAlignment="Left" Margin="33,161,0,0" VerticalAlignment="Top" Width="183" SelectionChanged="cmbCategories_SelectionChanged"/>
         <TextBox x:Name="txtProdName" HorizontalAlignment="Left" Margin="33,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DataGrid x:Name="grdProd" d:ItemsSource="{d:SampleData ItemCount=5}" Height="NaN" Margin="307,44,44,44" Width="NaN"/>
         <Label Content="Get Products by Category" HorizontalAlignment="Left" Margin="33,108,0,0" VerticalAlignment="Top" FontWeight="Bold"/>

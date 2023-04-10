@@ -38,10 +38,11 @@ namespace FinalTuyetMaiPham
         {
             using (var context = new NorthwindEntities())
             {
-                var categoryNames = (from category in context.Categories
-                                     select category.CategoryName).ToList();
+                var categories = context.Categories.ToList();
 
-                cmbCategories.ItemsSource = categoryNames;
+                cmbCategories.ItemsSource = categories;
+                cmbCategories.DisplayMemberPath = "CategoryName";
+                cmbCategories.SelectedValuePath = "CategoryID";
             }
         }
 
@@ -51,6 +52,20 @@ namespace FinalTuyetMaiPham
             txtProdName.Text = string.Empty;
             grdProd.ItemsSource = null;
 
+        }
+
+        private void cmbCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int selectedCategory = Convert.ToInt32(cmbCategories.SelectedValue);
+
+            using (var context = new NorthwindEntities())
+            {
+                var prodInCategory = (from product in context.Products
+                                      where product.CategoryID == selectedCategory
+                                      select product).ToList();
+
+                grdProd.ItemsSource = prodInCategory;
+            }
         }
     }
 }
