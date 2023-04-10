@@ -64,13 +64,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddProd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddProd.xaml.cs">
+      <DependentUpon>AddProd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>Product.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -83,10 +93,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Product.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Product.tt</DependentUpon>
+    </Compile>
     <Compile Include="Product.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Product.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -125,6 +143,12 @@
     <Content Include="Product.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Product.Context.cs</LastGenOutput>
+      <DependentUpon>Product.edmx</DependentUpon>
+    </Content>
+    <Content Include="Product.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Product.edmx</DependentUpon>
+      <LastGenOutput>Product1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

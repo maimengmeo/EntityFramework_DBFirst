@@ -24,5 +24,15 @@ namespace FinalTuyetMaiPham
         {
             InitializeComponent();
         }
+
+        private void btnGetAllProd_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new NorthwindEntities())
+            {
+                var products = context.Products.ToList();
+                grdProd.ItemsSource = products;
+            }
+        }
+
     }
 }
