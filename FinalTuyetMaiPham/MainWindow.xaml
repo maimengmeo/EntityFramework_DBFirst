@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalTuyetMaiPham"
         mc:Ignorable="d"
-        Title="Home" Height="450" Width="800">
+        Title="Home" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Button x:Name="btnClearData" Content="Clear Data" HorizontalAlignment="Left" Margin="157,57,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnAdd" Content="Add New Product" HorizontalAlignment="Left" Margin="78,330,0,0" VerticalAlignment="Top"/>

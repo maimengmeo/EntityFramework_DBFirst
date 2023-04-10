@@ -34,5 +34,15 @@ namespace FinalTuyetMaiPham
             }
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            using (var context = new NorthwindEntities())
+            {
+                var categoryNames = (from category in context.Categories
+                                     select category.CategoryName).ToList();
+
+                cmbCategories.ItemsSource = categoryNames;
+            }
+        }
     }
 }
