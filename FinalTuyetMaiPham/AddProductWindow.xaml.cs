@@ -28,7 +28,48 @@ namespace FinalTuyetMaiPham
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            
+            if (String.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Invalid Product Name. Try again!");
+            }
+            else if (cmbCategory.SelectedItem == null)
+            {
+                MessageBox.Show("Please Select Product Category!");
+            }
+            else
+            {
+                string productName = txtName.Text;
+                decimal price;
+                int category = Convert.ToInt32(cmbCategory.SelectedValue);
 
+                if (decimal.TryParse(txtPrice.Text, out price))
+                {
+                    using (var context = new NorthwindEntities())
+                    {
+                        Product newProduct = new Product();
+                        newProduct.ProductName = productName;
+                        newProduct.UnitPrice = price;
+                        newProduct.CategoryID = category;
+
+                        context.Products.Add(newProduct);
+                        context.SaveChanges();
+
+                        MessageBox.Show("New Product is added!");
+
+                        txtName.Text = "";
+                        txtName.Focus();
+                        txtPrice.Text = "";
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Price. Try again!");
+                }
+            }
+            
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

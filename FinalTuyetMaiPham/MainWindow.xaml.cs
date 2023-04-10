@@ -33,13 +33,7 @@ namespace FinalTuyetMaiPham
             {
                 var products = context.Products.ToList();
                 grdProd.ItemsSource = products;
-            }
-        }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            using (var context = new NorthwindEntities())
-            {
                 categories = context.Categories.ToList();
 
                 cmbCategories.ItemsSource = categories;
