@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalTuyetMaiPham"
         mc:Ignorable="d"
-        Title="AddProductWindow" Height="450" Width="800">
+        Title="Add Product Window" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Label Content="Add Product" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
         <Label Content="Category" HorizontalAlignment="Left" Margin="243,281,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
@@ -13,9 +13,9 @@
         <Label Content="Product Name" HorizontalAlignment="Left" Margin="243,146,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="381,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="381,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="381,285,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAdd" Content="Add Product" HorizontalAlignment="Left" Margin="328,353,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="441,353,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <ComboBox x:Name="cmbCategory" HorizontalAlignment="Left" Margin="381,285,0,0" VerticalAlignment="Top" Width="120" Text="Select Product Category"/>
+        <Button x:Name="btnAdd" Content="Add Product" HorizontalAlignment="Left" Margin="328,353,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnAdd_Click"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="441,353,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnClose_Click"/>
 
     </Grid>
 </Window>

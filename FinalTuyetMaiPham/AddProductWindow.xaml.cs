@@ -25,5 +25,22 @@ namespace FinalTuyetMaiPham
             InitializeComponent();
             this.categories = categories;
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            cmbCategory.ItemsSource = this.categories;
+            cmbCategory.DisplayMemberPath = "CategoryName";
+            cmbCategory.SelectedValuePath = "CategoryID";
+        }
     }
 }
