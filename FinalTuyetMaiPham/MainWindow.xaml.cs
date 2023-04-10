@@ -67,5 +67,17 @@ namespace FinalTuyetMaiPham
                 grdProd.ItemsSource = prodInCategory;
             }
         }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new NorthwindEntities())
+            {
+                var products = context.Products
+                                        .Where (p => p.ProductName.Contains(txtProdName.Text))
+                                        .ToList();
+
+                grdProd.ItemsSource = products;
+            }
+        }
     }
 }
