@@ -31,7 +31,20 @@ namespace FinalTuyetMaiPham
         {
             using (var context = new NorthwindEntities())
             {
-                var products = context.Products.ToList();
+
+                var products = (from product in context.Products
+                                select new {product.ProductID,
+                                            product.ProductName,
+                                            product.SupplierID,
+                                            product.CategoryID,
+                                            product.QuantityPerUnit,
+                                            product.UnitPrice,
+                                            product.UnitsInStock,
+                                            product.UnitsOnOrder,
+                                            product.ReorderLevel,
+                                            product.Discontinued}).ToList();
+                //if select everything here, extra column for Category is generated and filled with raw data,
+                //there for i select each column from product table manually
                 grdProd.ItemsSource = products;
 
                 categories = context.Categories.ToList();
@@ -40,6 +53,7 @@ namespace FinalTuyetMaiPham
                 cmbCategories.DisplayMemberPath = "CategoryName";
                 cmbCategories.SelectedValuePath = "CategoryID";
             }
+
         }
 
         private void btnClearData_Click(object sender, RoutedEventArgs e)
